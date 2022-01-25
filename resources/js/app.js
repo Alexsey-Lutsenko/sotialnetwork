@@ -5,6 +5,7 @@
  */
 window.Vue = require("vue").default;
 import { createApp } from "vue";
+import router from "./router";
 const app = createApp({});
 
 /**
@@ -22,7 +23,7 @@ app.component(
     "example-component",
     require("./components/ExampleComponent.vue").default
 );
-app.mount("#app");
+app.use(router).mount("#app");
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
